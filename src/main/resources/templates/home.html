@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Day la trang chu</h1>
+<h1>Ho ten la: <label th:text="${hoTen}"></label></h1>
+Tuoi: <label th:text="${tuoi}"></label> <br>
+Gioi tinh: <label th:text="${gioiTinh}"></label>
+<form action="/login" method="post">
+    <label>Email:</label>
+    <input type="text"> <br>
+    <label>Password:</label>
+    <input type="text"> <br>
+    <button type="submit">Login</button>
+</form>
+<a href="/click">Click forward</a> <br>
+<a href="/click/redirect">Click redirect</a>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hocSinh : ${list}">
+        <td th:text="${hocSinh.id}"></td>
+        <td th:text="${hocSinh.name}"></td>
+        <td th:text="${hocSinh.age}"></td>
+        <td th:text="${hocSinh.status}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

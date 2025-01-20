@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b th:text="${message}"></b>
+<form action="/user/save" method="post" th:object="${user}">
+    id
+    <input type="text" th:field="*{id}"> <i th:errors="*{id}"></i> <br>
+    name
+    <input type="text" th:field="*{name}"> <i th:errors="*{name}"></i> <br>
+    age
+    <input type="text" th:field="*{age}"> <i th:errors="*{age}"></i> <br>
+    address
+    <input type="text" th:field="*{address}"> <i th:errors="*{address}"></i> <br>
+    <button>Submit</button>
+</form>
+</body>
+</html>
