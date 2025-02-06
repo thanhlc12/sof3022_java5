@@ -19,7 +19,16 @@ Gioi tinh: <label th:text="${gioiTinh}"></label>
 </form>
 <a href="/click">Click forward</a> <br>
 <a href="/click/redirect">Click redirect</a>
-
+<form action="/hoc-sinh/add" method="post">
+    <label>Name</label>
+    <input type="text" name="name"> <br>
+    <label>Age</label>
+    <input type="text" name="age"> <br>
+    <label>Status</label>
+    <input type="radio" name="status" value="Active"> Active
+    <input type="radio" name="status" value="Inactive"> Inactive <br>
+    <button type="submit">Add</button>
+</form>
 <table border="1">
     <thead>
     <tr>
@@ -27,6 +36,7 @@ Gioi tinh: <label th:text="${gioiTinh}"></label>
         <th>Name</th>
         <th>Age</th>
         <th>Status</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -35,6 +45,10 @@ Gioi tinh: <label th:text="${gioiTinh}"></label>
         <td th:text="${hocSinh.name}"></td>
         <td th:text="${hocSinh.age}"></td>
         <td th:text="${hocSinh.status}"></td>
+        <td>
+            <a th:href="@{|/hoc-sinh/delete/*{hocSinh.id}|}"><button>Delete</button></a>
+            <a th:href="@{|/hoc-sinh/delete/*{hocSinh.id}|}"><button>Detail</button></a>
+        </td>
     </tr>
     </tbody>
 </table>
